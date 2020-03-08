@@ -8,7 +8,6 @@ Path_name=    #--------   eg  'C:\Users\ACER\Desktop\Dejis movies'              
 duplicate_folder_path =    #-------    eg'C:\\Users\\ACER\\Desktop\\duplicate_files'   #folder to contain duplicate files 
 
 
-
 count = 0  #original number of movies in your root dir(Path_name)
 count2 = 0 #suspected duplicate movies by file name
 count3 = 0 #suspected duplicate movies by file size
