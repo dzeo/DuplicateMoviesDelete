@@ -5,8 +5,8 @@ import formats
 #Begin by uncommenting the next two lines and custom defining the Path_name and duplicate_folder_path variables.
 
 
-Path_name=    #--------   eg  'C:\Users\ACER\Desktop\Dejis movies'                  root dir for the os.walk method
-duplicate_folder_path =    #-------    eg'C:\\Users\\ACER\\Desktop\\duplicate_files'   #folder to contain duplicate files 
+Path_name=    #os.getcwd() eg  'C:\Users\begin_folder'                  folder full path location to begin cleaning
+duplicate_folder_path =    #-------    eg'C:\\Users\\move_duplicates_to'   #folder to contain duplicate file's full path location
 
 
 count = 0  #original number of movies in your root dir(Path_name)
@@ -17,12 +17,12 @@ count4 = 0  #Number of movies Unreadable
 moved_movies = []
 movie_dict = {}
 
-fhand = open("%s\\duplicate_movie_by_name.txt" %duplicate_folder_path, "w")
+fhand = open(f"{duplicate_folder_path}\\duplicate_movie_by_name.txt", "w")
 
 fhand.write("""\t\t\t\t\t This is a List of Suspected Duplicate Movies by Name      
                     \n \t\t\t\t\t\t\t(Ie, They Both Have the Same Name) \n """)       #Creates a text file to contain suspected movies
 
-f2hand = open("%s\\duplicate_movie_by_size.txt" %duplicate_folder_path, "w")
+f2hand = open(f"{duplicate_folder_path}\\duplicate_movie_by_size.txt", "w")
 
 f2hand.write(""""\t\t\t\t\t This is a List of Suspected Duplicate Movies by Size
                   \n \t\t\t\t\t\t\t(Ie, They Both Have the Same Size) \n """)
@@ -100,6 +100,7 @@ for path, directories, files in os.walk(Path_name):
                 
                    
             except:
+                  
                 count4 +=1
                 continue
                 
