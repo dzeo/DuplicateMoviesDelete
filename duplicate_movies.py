@@ -1,4 +1,5 @@
 import os
+import formats
 
 
 #Begin by uncommenting the next two lines and custom defining the Path_name and duplicate_folder_path variables.
@@ -27,15 +28,15 @@ f2hand.write(""""\t\t\t\t\t This is a List of Suspected Duplicate Movies by Size
                   \n \t\t\t\t\t\t\t(Ie, They Both Have the Same Size) \n """)
                   
 def get_file_name(f_size):
+  """
+  Returns file name whose filesize correstponds with the files size passed in as parameter.
+  """
     for x,(z,y) in movie_dict.items():
         if z == f_size :
             return x
 
         
-video_formats = (".mp4", ".3gp", ".ogg", ".wmv", ".webm", ".flv", ".avi", ".hdv", ".ts", ".mkv", ".srt", ".vob", ".ogv", ".gif", 
-        ".mng", ".MTS", ".M2TS", ".TS", ".mov",".qt", ".yuv", ".rm", ".rmvb", ".amv", ".asf", ".m4p", ".m4v",
-        ".mpg", ".mp2", ".mpeg", ".mpv", ".mpe", ".m2v", ".svi", ".3g2", ".mxf", ".nsv", ".f4v", ".f4p", ".f4a", ".f4b")
-
+video_formats = formats.video_formats
 
 
 
